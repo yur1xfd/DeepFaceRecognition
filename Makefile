@@ -11,10 +11,13 @@ prereqs:
 build:
         g++ -c ./postprocessing.cpp -o postprocessing.o -std=c++17 -Ijson/single_include -I/usr/include/opencv4
         g++ -o postprocessing postprocessing.o -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc
+        g++ -std=c++17 `pkg-config --cflags opencv4` -c preprocessing.cpp -o preprocessing.o
+        g++ preprocessing.o `pkg-config --libs opencv4` -o preprocessing
 
 preprocessing:
+	./preprocessing
 
 processing:
-
+	
 postprocessing:
         ./postprocessing
