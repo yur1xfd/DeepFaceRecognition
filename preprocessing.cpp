@@ -4,8 +4,8 @@
 
 namespace fs = std::filesystem;
 
-#define TARGET_WIDTH 224
-#define TARGET_HEIGHT 224
+#define TARGET_WIDTH 640
+#define TARGET_HEIGHT 640
 
 void preprocess(const std::string &input_dir, const std::string 
 &output_dir) {
