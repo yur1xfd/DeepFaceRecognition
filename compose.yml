@@ -10,4 +10,3 @@ services:
       - ./input:/workspace/input
       - ./output_raw:/workspce/output_raw
       - ./output:/workspace/output
-	
