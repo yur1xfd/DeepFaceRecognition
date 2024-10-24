@@ -6,7 +6,8 @@ run: preprocessing processing postprocessing
 
 # Default target
 prereqs:
-
+        sudo apt-get install libopencv-dev
+        git clone https://github.com/nlohmann/json.git ./output_raw
 build:
 
 preprocessing:
