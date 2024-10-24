@@ -31,11 +31,8 @@ input_path << std::endl;
             cv::resize(img, img_resized, cv::Size(TARGET_WIDTH, 
 TARGET_HEIGHT));
 
-            // Normalize image to [0, 1]
-            img_resized.convertTo(img_resized, CV_32F, 1.0 / 255.0);
-
             // Save processed image (convert back to uint8 for saving)
-            cv::imwrite(output_path, img_resized * 255);
+            cv::imwrite(output_path, img_resized);
         }
     }
 }
