@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:latest AS deepface
 
 RUN apt update && apt upgrade -y
 
