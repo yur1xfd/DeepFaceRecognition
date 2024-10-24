@@ -17,3 +17,4 @@ preprocessing:
 processing:
 
 postprocessing:
+        ./postprocessing
