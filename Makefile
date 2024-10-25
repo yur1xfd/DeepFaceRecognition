@@ -7,18 +7,21 @@ run: preprocessing processing postprocessing
 # Default target
 prereqs:
 	apt-get install -y \
-    	ffmpeg \
-    	libsm6 \
-    	libxext6 \
-    	libhdf5-dev \
-    	python3 \
-    	python3-pip \
-    	git \
-	vim \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    libhdf5-dev \
+    python3 \
+    python3-pip \
+    git \
 	make \
+	vim \
 	build-essential \
 	libopencv-dev \
 	apt-utils \
+	ffmpeg \
+    python3 \
+    python3-pip
 	pip install torch==2.4.1 torchvision==0.19.1
 	git clone https://github.com/serengil/deepface.git
 	cd deepface && pip install -e .
