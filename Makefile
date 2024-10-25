@@ -15,6 +15,7 @@ prereqs:
     	python3-pip \
     	git \
 	vim \
+	make \
 	build-essential \
 	libopencv-dev \
 	apt-utils \
