@@ -25,11 +25,12 @@ entry.path().filename().string();
 input_path << std::endl;
                 continue;
             }
-
+            int width = img.cols;   // Width of the image
+            int height = img.rows;  // Height of the image
             // Resize image
             cv::Mat img_resized;
-            cv::resize(img, img_resized, cv::Size(TARGET_WIDTH, 
-TARGET_HEIGHT));
+            cv::resize(img, img_resized, cv::Size(width /  2, 
+height / 2));
 
             // Save processed image (convert back to uint8 for saving)
             cv::imwrite(output_path, img_resized);
@@ -46,4 +47,3 @@ int main(int argc, char *argv[]) {
     preprocess(argv[1], argv[2]);
     return EXIT_SUCCESS;
 }
-

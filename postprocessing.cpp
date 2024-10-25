@@ -1,8 +1,8 @@
+root@82e9ba734db5:/workspace# cat postprocessing.cpp
 #include <iostream>
 #include <fstream>
 #include <opencv2/opencv.hpp>
 #include <nlohmann/json.hpp>
-
 using json = nlohmann::json;
 
 void drawBoundingBoxes(const std::string& imagePath, const json& boxes, const std::string& outputPath) {
@@ -14,9 +14,13 @@ void drawBoundingBoxes(const std::string& imagePath, const json& boxes, const st
 
     for (const auto& box : boxes) {
         int x = box["x"];
+        x = x*2;
         int y = box["y"];
+        y = y*2;
         int w = box["w"];
+        w = w*2;
         int h = box["h"];
+        h = h*2;
         cv::rectangle(image, cv::Point(x, y), cv::Point(x + w, y + h), cv::Scalar(0, 0, 255), 2);
     }
 
@@ -32,11 +36,12 @@ int main() {
 
     json data;
     jsonFile >> data;
-
     for (const auto& [imagePath, boxes] : data.items()) {
+        std::string x = imagePath;
+        x.insert(5, "_raw");
         std::string outputPath = "./output/output_" + imagePath.substr(imagePath.find_last_of('/') + 1);
-        drawBoundingBoxes(imagePath, boxes, outputPath);
-        std::cout << "Bounding boxes drawn on " << imagePath << " and saved to " << outputPath << std::endl;
+        drawBoundingBoxes(x, boxes, outputPath);
+        std::cout << "Bounding boxes drawn on " << x << " and saved to " << outputPath << std::endl;
     }
 
     return 0;
