@@ -1,4 +1,3 @@
-root@82e9ba734db5:/workspace# cat postprocessing.cpp
 #include <iostream>
 #include <fstream>
 #include <opencv2/opencv.hpp>
