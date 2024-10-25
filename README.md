@@ -1,6 +1,5 @@
 # DeepFaceRecognition
 DeepFaceRecognition repository provide an ability to detect faces on images. To use our project follow this instruction:
-
 ```git clone https://github.com/yur1xfd/DeepFaceRecognition.git
 ```
 You can use our project in 2 different scenatio.
