@@ -48,8 +48,8 @@ make run
 Here an example of running our pipline:
    1. Raw input image 
    ![raw_input_image](input_raw/img2.jpg)
-   2. Preprocessed image after `make preprocessing`
-   ![input_image](input/img2.jpg)
+   2. Preprocessed image after `make preprocessing` (Resize from 1920x1080 to 960x540)
+      <img src="input/img2.jpg" width=480 height=270>
    3. Output image after processing and postprocessing stages
    ![output_image](output/output_img2.jpg)  
 
