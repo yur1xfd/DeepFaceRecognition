@@ -2,11 +2,11 @@ name: deepface
 
 services:
   service:
-    image: deepface 
+    image: 940a2aadc55b 
     stdin_open: true
     tty: true
     volumes:
       - ./input_raw:/workspace/input_raw
       - ./input:/workspace/input
-      - ./output_raw:/workspce/output_raw
+      - ./output_raw:/workspace/output_raw
       - ./output:/workspace/output
