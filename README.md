@@ -1,6 +1,7 @@
 # DeepFaceRecognition
-DeepFaceRecognition repository provide an ability to detect faces on images. To use our project follow this instruction:
-```git clone https://github.com/yur1xfd/DeepFaceRecognition.git
+DeepFaceRecognition repository provide an ability to detect faces on images. To use our project follow this instruction.
+```
+git clone https://github.com/yur1xfd/DeepFaceRecognition.git
 ```
 You can use our project in 2 different scenatio.
 1. Build locally with Makefile
@@ -43,9 +44,7 @@ Now you have the results in the /output folder
 Also you can run full pipeline with one command:
 ```
 make run
-```
-   
-    
+``` 
 Foundations of Software Engineering for AI course final project
 Our team:
 1. Ivan Listopadov
