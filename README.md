@@ -22,7 +22,7 @@ You can use our project in 2 different scenatio.
    ```
    docker attach deepface-service-1
    ```
-Put images you want to use for face recognition to /input_raw folder.
+Put images you want to use for face recognition to `input_raw/` folder.
 To run our DeepFaceRecognition pipeline
 Build executables
 ```
@@ -40,7 +40,7 @@ Run postprocessing stage
 ```
 make postprocessing
 ```
-Now you have the results in the /output folder
+Now you have the results in the `output/` folder
 Also you can run full pipeline with one command:
 ```
 make run
@@ -53,7 +53,7 @@ Here an example of running our pipline:
    3. Output image after processing and postprocessing stages
    ![output_image](output/output_img2.jpg)  
 
-Foundations of Software Engineering for AI course final project
+Foundations of Software Engineering for AI course final project  
 Our team:
 1. Ivan Listopadov
 2. Sergey Grozny
