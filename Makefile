@@ -6,8 +6,26 @@ run: preprocessing processing postprocessing
 
 # Default target
 prereqs:
-	sudo apt-get install -y make build-essential
-	sudo apt-get install -y libopencv-dev git
+	apt-get install -y \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    libhdf5-dev \
+    python3 \
+    python3-pip \
+    git \
+	make \
+	build-essential \
+	libopencv-dev \
+	apt-utils \
+	ffmpeg \
+    python3 \
+    python3-pip
+	pip install torch==2.4.1 torchvision==0.19.1
+	git clone https://github.com/serengil/deepface.git
+	cd deepface && pip install -e .
+	cd ..
+	pip install ultralytics tf-keras
 	git clone https://github.com/nlohmann/json.git
 
 build:
@@ -17,10 +35,13 @@ build:
 	g++ preprocessing.o `pkg-config --libs opencv4` -o preprocessing
 
 preprocessing:
+	rm -f ./input/*
 	./preprocessing ./input_raw ./input
-
+	
 processing:
-	# Add commands for processing here, if any.
+	rm -f ./output_raw/*
+	python3 process.py -i "input" -o "output_raw"
 
 postprocessing:
+	rm -f ./output/*
 	./postprocessing
