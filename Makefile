@@ -1,5 +1,7 @@
 .PHONY: all prereqs build preprocessing processing postprocessing
 
+export PIP_BREAK_SYSTEM_PACKAGES := 1 # for ubuntu version >= 24
+
 all: prereqs build preprocessing processing postprocessing test
 
 run: preprocessing processing postprocessing
@@ -19,13 +21,14 @@ prereqs:
 	build-essential \
 	libopencv-dev \
 	apt-utils
-	pip install torch==2.4.1 torchvision==0.19.1 --break-system-packages
+	
+	pip install torch==2.4.1 torchvision==0.19.1
 	git clone https://github.com/serengil/deepface.git
-	cd deepface && pip install -e . --break-system-packages
+	cd deepface && pip install -e .
 	cd ..
-	pip install ultralytics tf-keras --break-system-packages
+	pip install ultralytics tf-keras
 	git clone https://github.com/nlohmann/json.git
-	pip install pytest --break-system-packages
+	pip install pytest
 
 build:
 	g++ -c ./postprocessing.cpp -o postprocessing.o -std=c++17 -Ijson/single_include -I/usr/include/opencv4
