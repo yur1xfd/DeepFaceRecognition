@@ -1,6 +1,11 @@
 # DeepFaceRecognition
 DeepFaceRecognition repository provide an ability to detect faces on images. To use our project follow this instruction.
 ## Installation
+```
+$ git clone https://github.com/yur1xfd/DeepFaceRecognition.git && cd DeepFaceRecognition
+```
+You can use our project in 2 ways.
+### 1. Build locally with Makefile
 Set a TZ:  
 ```
 $ export TZ=Europe/Moscow && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -9,12 +14,6 @@ Make sure that `make` and `git` is installed in your system:
 ```
 $ apt-get update && apt-get install -y make git
 ```
-```
-$ git clone https://github.com/yur1xfd/DeepFaceRecognition.git && cd DeepFaceRecognition
-```
-You can use our project in 2 ways.
-### 1. Build locally with Makefile
-
 Install all dependencies:
 ```
 $ make prereqs
