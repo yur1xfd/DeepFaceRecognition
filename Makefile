@@ -7,24 +7,25 @@ run: preprocessing processing postprocessing
 # Default target
 prereqs:
 	apt-get install -y \
-    	ffmpeg \
-    	libsm6 \
-    	libxext6 \
-    	libhdf5-dev \
-    	python3 \
-    	python3-pip \
-    	git \
+	ffmpeg \
+	libsm6 \
+	libxext6 \
+	libhdf5-dev \
+	python3 \
+	python3-pip \
+	python3-venv \
+	git \
 	vim \
 	build-essential \
 	libopencv-dev \
 	apt-utils
-	pip install torch==2.4.1 torchvision==0.19.1
+	pip install torch==2.4.1 torchvision==0.19.1 --break-system-packages
 	git clone https://github.com/serengil/deepface.git
-	cd deepface && pip install -e .
+	cd deepface && pip install -e . --break-system-packages
 	cd ..
-	pip install ultralytics tf-keras
+	pip install ultralytics tf-keras --break-system-packages
 	git clone https://github.com/nlohmann/json.git
-	pip install pytest
+	pip install pytest --break-system-packages
 
 build:
 	g++ -c ./postprocessing.cpp -o postprocessing.o -std=c++17 -Ijson/single_include -I/usr/include/opencv4
