@@ -1,6 +1,6 @@
 .PHONY: all prereqs build preprocessing processing postprocessing
 
-export PIP_BREAK_SYSTEM_PACKAGES := 1 # for ubuntu version >= 24
+export PIP_BREAK_SYSTEM_PACKAGES:=1# for ubuntu version >= 24
 
 all: prereqs build preprocessing processing postprocessing test
 

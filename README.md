@@ -1,31 +1,36 @@
 # DeepFaceRecognition
 DeepFaceRecognition repository provide an ability to detect faces on images. To use our project follow this instruction.
 ## Installation
+Set a TZ:  
 ```
-git clone https://github.com/yur1xfd/DeepFaceRecognition.git && cd DeepFaceRecognition
+$ export TZ=Europe/Moscow && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+```
+Make sure that `make` and `git` is installed in your system:
+```
+$ apt-get update && apt-get install -y make git
+```
+```
+$ git clone https://github.com/yur1xfd/DeepFaceRecognition.git && cd DeepFaceRecognition
 ```
 You can use our project in 2 ways.
 ### 1. Build locally with Makefile
-Make sure that `make` is installed in your system:
+
+Install all dependencies:
 ```
-apt-get update && apt-get install make
-```
-Then install all dependencies:
-```
-make prereqs
+$ make prereqs
 ```
 ### 2. Build with Docker
 Build docker image using Dockerfile
 ```
-docker build -t deepface
+$ docker build -t deepface
 ```
 Run builded image
 ```
-docker compose up -d
+$ docker compose up -d
 ```
 Attach to container
 ```
-docker attach deepface-service-1
+$ docker attach deepface-service-1
 ```
 ## Quick Start
 Put images you want to use for face recognition to `input_raw/` folder. To run our DeepFaceRecognition pipeline:  
@@ -33,26 +38,26 @@ Put images you want to use for face recognition to `input_raw/` folder. To run o
 
 Build executables
 ```
-make build
+$ make build
 ```
 Run preprocessing stage
 ```
-make preprocessing
+$ make preprocessing
 ```
 Run processing stage
 ```
-make processing
+$ make processing
 ```
 Run postprocessing stage
 ```
-make postprocessing
+$ make postprocessing
 ```
 Now you have the results in the `output/` folder.  
 
 
 Also you can run full pipeline with one command:
 ```
-make run
+$ make run
 ```
 Here an example of running our pipline:
    1. Raw input image 
