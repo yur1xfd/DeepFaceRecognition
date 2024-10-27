@@ -22,7 +22,7 @@ $ make prereqs
 ### 2. Build with Docker
 Build docker image using Dockerfile
 ```
-$ docker build -t deepface
+$ docker build -t deepface .
 ```
 Run builded image
 ```
